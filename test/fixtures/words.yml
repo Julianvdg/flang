@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: MyString
+  known: false
+  language: one
+
+two:
+  value: MyString
+  known: false
+  language: two

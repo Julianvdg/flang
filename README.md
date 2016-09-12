@@ -1,4 +1,4 @@
-# README
+# Flang: Language learning app with flash cards
 
 A language learning app that features:
 * Texts can be pasted in and unknown words can be highlighted
@@ -14,7 +14,7 @@ A language learning app that features:
 * word_id: integer
 * value: string
 * known: boolean
-* language_id: integer foreign key)
+* language_id: integer (foreign key)
 
 #### Languages(has_many words, translations)
 * language_id: integer

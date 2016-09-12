@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A language learning app that features:
+* Texts can be pasted in and unknown words can be highlighted
+* After unknown words are stored, the other words are stored as known words
+* Unknown words are stored with their translation
+* I can learn my unknown words by viewing flash cards of them
+* Once I know a word, they move from unknown to known words
 
-Things you may want to cover:
 
-* Ruby version
+### Database design:
 
-* System dependencies
+#### Words (has_one language, has_many translations)
+* word_id: integer
+* value: string
+* known: boolean
+* language_id: integer foreign key)
 
-* Configuration
+#### Languages(has_many words, translations)
+* language_id: integer
+* name: string
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Translations (has_one language, has_one word)
+* translation_id: integer
+* value: string
+* language_id: integer (foreign key)
+* word_id: integer (foreign key)

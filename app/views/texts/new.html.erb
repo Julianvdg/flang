@@ -1,0 +1,11 @@
+<h1>New Text</h1>
+
+<%= form_for @text do |f| %>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+
+    <%= f.label :language %>
+    <%= f.select(:language_id, [['English', 1], ['Dutch', 2], ['French', 3]]) %>
+
+    <%= f.submit "Create" %>
+<% end %>

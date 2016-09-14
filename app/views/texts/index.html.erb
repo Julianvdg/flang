@@ -1,11 +1,7 @@
 <h1>Texts Index</h1>
 
 <% @texts.each do |text| %>
-  <p><%= text.text %></p>
-<% end %>
-
-<% @texts.each do |text| %>
-    <p><%= link_to text.id, text_path(text.id) %></p>
+    <p><%= link_to text.text, new_text_word_path(text.id) %></p>
 <% end %>
 
 <%= link_to "[New Text]", new_text_path %>

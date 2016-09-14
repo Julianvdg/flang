@@ -1,0 +1,7 @@
+.highlight {
+  background-color: rgba(234, 184, 32, 0.6);
+}
+
+.text span {
+  cursor: pointer;
+}

@@ -17,8 +17,9 @@ class TextsController < ApplicationController
 
     @text = Text.new( text_params )
 
+
     if @text.save
-       redirect_to @text
+       redirect_to new_text_word_path(text_id:@text.id)
     else
        render 'new'
     end

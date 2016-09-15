@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :words
   end
 
+
   # # Text paths
   # get "texts" => "texts#index"
   # get 'texts/new' => "texts#new", as: :new_text

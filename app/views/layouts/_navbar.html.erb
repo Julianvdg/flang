@@ -5,18 +5,13 @@
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
     <a class="navbar-brand" href="#">Flang App</a>
     <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="<%= active_class(root_path) %> nav-item">
+        <%= link_to 'Home', root_path, class:"nav-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+      <li class="<%= active_class(new_text_path) %> nav-item">
+        <%= link_to 'Add new text', new_text_path, class:"nav-link" %>
       </li>
     </ul>
+
   </div>
 </nav>

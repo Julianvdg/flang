@@ -1,5 +1,10 @@
 <h1>words Index</h1>
 
 <% @text.words.each do |word| %>
-    <p><%= word.value %></p>
+    <div class="col-md-4">
+      <div class="card card-block">
+        <h4 class="card-title"><%= word.value %></h4>
+      </div>
+      <p></p>
+    </div>
 <% end %>

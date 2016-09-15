@@ -21,14 +21,17 @@ class WordsController < ApplicationController
     words_array = word_params[:value].split(" ")
     language_id = @text.language_id
     text_id = @text.id
+    @word = Word.new
 
     words_array.each do |word|
+      if Word.where(value: word).blank?
       @word = Word.new
       @word.value = word
       @word.language_id = language_id
       @word.known = false
       @word.text_id = text_id
       @word.save
+      end
     end
 
     if @word.save

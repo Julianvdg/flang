@@ -5,6 +5,16 @@ $(document).on('turbolinks:load', function() {
     });
 
 
+    var unkownWords= [];
+    $("#unknown-words li").each(function() { unkownWords.push($(this).text()) });
+
+    $.each(unkownWords, function(i, val) {
+      $( "span:contains("+ val +")" ).addClass("highlight");
+    });
+
+
+
+
     $('.text span').on("click", function() {
         var currentWord = getWord($(this).html())
 
@@ -14,6 +24,7 @@ $(document).on('turbolinks:load', function() {
             $("#unknown-words").append("<li>" + getWord($(this).html()) + "</li>");
 
         } else {
+            $('span:contains(' + currentWord + ')').removeClass("highlight")
             $('li:contains(' + currentWord + ')').not('.highlight').remove();
             $('#word_value').text($('#word_value').text().replace(currentWord, ''))
         }

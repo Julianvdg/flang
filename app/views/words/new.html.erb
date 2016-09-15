@@ -1,12 +1,30 @@
 
+<!-- 
+<%= test = @text.text.split
 
 
-<p id="result"></p>
+    array = []
+      @text.words.map do |word|
+      array << word.value
+    end
+
+
+
+    testarray = test.each do |test|
+        array.each do |word|
+          if test == word
+            test.gsub!(word, "<span class='highlight'>"+ word + "</span>")
+          end
+        end
+    end
+ %> -->
+
 
 <div class="col-md-6">
   <h1>Select words you don't know</h1>
 
-  <div class="text"><span><%= @text.text %></span></div>
+  <div class="text"><span><%= @text.text%></span></div>
+
 
   <%= form_for [@text, @word]  do |f| %>
       <%= f.text_area :value, style: 'display:none'%>

@@ -16,9 +16,21 @@ class TextsController < ApplicationController
     text_params = params.require( :text ).permit( :text, :language_id)
 
     @text = Text.new( text_params )
+    @text.save
+
+    words_array = @text.text.split(" ")
+
+    words_array.each do |word|
+      @word = Word.new
+      @word.text_id = @text.id
+      @word.known = true
+      @word.value = word
+      @word.language_id = @text.language_id
+      @word.save
+    end
 
 
-    if @text.save
+    if @text.save && @word.save
        redirect_to new_text_word_path(text_id:@text.id)
     else
        render 'new'

@@ -1,10 +1,23 @@
 <h1>words Index</h1>
 
-<% @text.words.each do |word| %>
+<% @unknownWords.each do |word| %>
     <div class="col-md-4">
-      <div class="card card-block">
-        <h4 class="card-title"><%= word.value %></h4>
+      <div class="flip">
+        <div class="cardtest">
+          <div class="face front">
+            <div class="well well-sm inner"><%= word.value %> | <%= word.language.name %></div>
+          </div>
+          <div class="face back">
+            <div class="well well-sm inner">
+                <% word.translations.each do |translation| %>
+
+                <%= translation.value %> | <%= translation.language.name %>
+
+                <% end %>
+
+            </div>
+          </div>
+        </div>
       </div>
-      <p></p>
     </div>
 <% end %>

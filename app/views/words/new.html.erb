@@ -1,45 +1,26 @@
 
-<!-- 
-<%= test = @text.text.split
 
 
-    array = []
-      @text.words.map do |word|
-      array << word.value
-    end
-
-
-
-    testarray = test.each do |test|
-        array.each do |word|
-          if test == word
-            test.gsub!(word, "<span class='highlight'>"+ word + "</span>")
-          end
-        end
-    end
- %> -->
 
 
 <div class="col-md-6">
   <h1>Select words you don't know</h1>
 
-  <div class="text"><span><%= @text.text%></span></div>
-
-
-  <%= form_for [@text, @word]  do |f| %>
-      <%= f.text_area :value, style: 'display:none'%>
-      <%= f.submit "Create" %>
-  <% end %>
-</div>
-
-
-<div class="col-md-6">
-
-  <h1>Unknown Words</h1>
-  <ul id="unknown-words">
-    <% @text.words.each do |word| %>
-      <li><%= word.value %></li>
+    <% @words.each do |word| %>
+        <span data-toggle="popover" id="<%= word.id %>" title="Please translate: <%= word.value %>" data-placement="bottom"
+        data-content=
+        '<form class="new_word" id="new_word" action="/texts/19/words" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="text" name="word[value]" id="word_value">
+        <input type="hidden" name="word[id]" id="word_id" value="<%= word.id %>">
+        <select name="word[language_id]" id="word_language_id">
+          <option value="1">English</option>
+          <option value="2">Dutch</option>
+          <option value="3">French</option></select>
+        <input type="submit" name="commit" value="Create" class="btn-primary" data-disable-with="Create">
+        </form>'>
+        <%= word.value %>
+      </span>
     <% end %>
-  </ul>
-
-</div>
+  </div>

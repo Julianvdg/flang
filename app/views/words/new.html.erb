@@ -1,5 +1,10 @@
 <div class="col-md-8 offset-md-2">
-  <h1 class="m-t-3 m-b-2">Select words you don't know</h1>
+  <div class="pagehead">
+    <h1 class="m-t-3 m-b-1 text-sm-center">Flashcard creator</h1>
+    <hr />
+    <h5 class="m-b-3 text-sm-center">Please select words you don't know..<h5>
+  </div>
+  <div class="text">
     <% @words.each do |word| %>
         <span data-toggle="popover" id="<%= word.id %>" title="Please translate: <%= word.value %>" data-placement="bottom"
         data-content=
@@ -19,6 +24,7 @@
       </span>
     <% end %>
     <%= link_to "Go to Flashcards", text_words_path(params[:text_id]), class:"btn btn-primary btn-block m-t-2" %>
+  </div>
 </div>
 <div class="col-md-3">
 

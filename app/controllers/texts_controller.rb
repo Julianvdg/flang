@@ -13,7 +13,7 @@ class TextsController < ApplicationController
   end
 
   def create
-    text_params = params.require( :text ).permit( :text, :language_id)
+    text_params = params.require( :text ).permit( :title, :text, :language_id)
 
     @text = Text.new( text_params )
     @text.save

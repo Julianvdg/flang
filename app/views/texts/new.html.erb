@@ -1,11 +1,14 @@
 <h1>New Text</h1>
 
-<%= form_for @text do |f| %>
+<%= form_for @text, class: "form-group" do |f|%>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+
     <%= f.label :text %>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, class: "form-control" %>
 
     <%= f.label :language %>
-    <%= f.select(:language_id, [['English', 1], ['Dutch', 2], ['French', 3]]) %>
+    <%= f.select(:language_id, [['English', 1], ['Dutch', 2], ['French', 3]], class:"form-control") %>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Create" , class: "btn btn-primary"%>
 <% end %>

@@ -42,6 +42,7 @@ class WordsController < ApplicationController
       @translation.save
 
     if @translation.save
+        flash[:success] = "Flashcard succesfully created!"
        redirect_to new_text_word_path(@word.text.id)
     else
        render 'new'

@@ -8,6 +8,9 @@
   <% @texts.each do |text| %>
         <%= link_to text.title, new_text_word_path(text.id), class: "list-group-item" %>
   <% end %>
+  <% if @texts.empty? %>
+    <div class="list-group-item">You don't have any texts yet. Please add one.</div>
+  <%end%>
   </div>
   <%= link_to "Add Text", new_text_path, class:"btn btn-primary btn-block" %>
 </div>

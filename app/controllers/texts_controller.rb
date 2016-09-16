@@ -31,6 +31,7 @@ class TextsController < ApplicationController
 
 
     if @text.save && @word.save
+        flash[:success] = "Text succesfully created!"
        redirect_to new_text_word_path(text_id:@text.id)
     else
        render 'new'

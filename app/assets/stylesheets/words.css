@@ -10,6 +10,8 @@
   display: none;
 }
 
+/* Flip cards CSS */
+
 .flip {
   -webkit-perspective: 800;
 perspective: 800;

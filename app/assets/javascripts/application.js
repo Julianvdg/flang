@@ -16,3 +16,4 @@
 //= require_tree .
 //= require tether
 //= require bootstrap-sprockets
+//= require growlyflash

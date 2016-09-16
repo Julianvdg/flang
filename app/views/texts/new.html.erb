@@ -4,13 +4,13 @@
 
 <%= form_for @text, html: {class: "form-group m-t-2"} do |f|%>
     <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control m-b-1" %>
 
     <%= f.label :text %>
-    <%= f.text_area :text, class: "form-control" %>
+    <%= f.text_area :text, class: "form-control m-b-1", rows: "8" %>
 
     <%= f.label :language %>
-    <%= f.select :language_id, [['English', 1], ['Dutch', 2], ['French', 3]], {include_blank: "Select language"}, {class: "form-control"} %>
+    <%= f.select :language_id, [['English', 1], ['Dutch', 2], ['French', 3]], {include_blank: "Select language"}, {class: "form-control m-b-1"} %>
 
     <%= f.submit "Create" , class: "btn btn-primary btn-block m-t-1"%>
 <% end %>

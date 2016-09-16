@@ -3,24 +3,24 @@
 
 
 
-<div class="col-md-6">
-  <h1>Select words you don't know</h1>
-
+<div class="col-md-6 offset-md-3">
+  <h1 class="m-t-3 m-b-2">Select words you don't know</h1>
     <% @words.each do |word| %>
         <span data-toggle="popover" id="<%= word.id %>" title="Please translate: <%= word.value %>" data-placement="bottom"
         data-content=
-        '<form class="new_word" id="new_word" action="/texts/19/words" accept-charset="UTF-8" method="post">
+        '<form class="new_word form-group" id="new_word" action="/texts/19/words" accept-charset="UTF-8" method="post">
         <input name="utf8" type="hidden" value="✓">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="text" name="word[value]" id="word_value">
+        <input type="text" class="form-control" name="word[value]" id="word_value" placeholder="Your translation..">
         <input type="hidden" name="word[id]" id="word_id" value="<%= word.id %>">
-        <select name="word[language_id]" id="word_language_id">
+        <select name="word[language_id]" id="word_language_id" class="form-control m-t-1">
+          <option value="">Select language</option>
           <option value="1">English</option>
           <option value="2">Dutch</option>
           <option value="3">French</option></select>
-        <input type="submit" name="commit" value="Create" class="btn-primary" data-disable-with="Create">
+        <input type="submit" name="commit" value="Create" class="btn btn-primary btn-block m-t-1" data-disable-with="Create">
         </form>'>
         <%= word.value %>
       </span>
     <% end %>
-  </div>
+</div>

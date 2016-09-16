@@ -1,8 +1,8 @@
 
 <div class="col-md-6 offset-md-3">
-<h1 clas="text-center">Add a new text</h1>
+<h1 class="text-xs-center m-t-3">Add a new text</h1>
 
-<%= form_for @text, class: "form-group" do |f|%>
+<%= form_for @text, html: {class: "form-group m-t-2"} do |f|%>
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
 
@@ -10,8 +10,8 @@
     <%= f.text_area :text, class: "form-control" %>
 
     <%= f.label :language %>
-    <%= f.select(:language_id, [['English', 1], ['Dutch', 2], ['French', 3]], class:"form-control") %>
+    <%= f.select :language_id, [['English', 1], ['Dutch', 2], ['French', 3]], {include_blank: "Select language"}, {class: "form-control"} %>
 
-    <%= f.submit "Create" , class: "btn btn-primary"%>
+    <%= f.submit "Create" , class: "btn btn-primary btn-block m-t-1"%>
 <% end %>
 </div>

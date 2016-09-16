@@ -1,23 +1,32 @@
-<h1>words Index</h1>
+<div class="col-md-12">
+  <div class="row">
+    <div class="m-t-3 m-b-3 text-xs-center">
+      <h1 >Flashcards</h1>
+    </div>
 
-<% @unknownWords.each do |word| %>
-    <div class="col-md-4">
-      <div class="flip">
-        <div class="cardtest">
-          <div class="face front">
-            <div class="well well-sm inner"><%= word.value %> | <%= word.language.name %></div>
-          </div>
-          <div class="face back">
-            <div class="well well-sm inner">
-                <% word.translations.each do |translation| %>
+    <% @unknownWords.each do |word| %>
+        <div class="col-md-4">
+          <div class="flip">
+            <div class="cardtest">
+              <div class="face front">
+                <div class="well well-sm inner"><%= word.value %> | <%= word.language.name %></div>
+              </div>
+              <div class="face back">
+                <div class="well well-sm inner">
+                    <% word.translations.each do |translation| %>
 
-                <%= translation.value %> | <%= translation.language.name %>
+                    <%= translation.value %> | <%= translation.language.name %>
 
-                <% end %>
+                    <% end %>
 
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-<% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= link_to "Add more Flashcards", new_text_word_path(text_id:@text.id), class:"btn btn-primary btn-block m-t-2" %>
+  </div>
+</div>

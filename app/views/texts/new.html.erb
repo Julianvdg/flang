@@ -1,4 +1,6 @@
-<h1>New Text</h1>
+
+<div class="col-md-6 offset-md-3">
+<h1 clas="text-center">Add a new text</h1>
 
 <%= form_for @text, class: "form-group" do |f|%>
     <%= f.label :title %>
@@ -12,3 +14,4 @@
 
     <%= f.submit "Create" , class: "btn btn-primary"%>
 <% end %>
+</div>

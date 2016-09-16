@@ -1,13 +1,13 @@
-<h1>Texts Index</h1>
 
-
-
-<div class="list-group">
-  <div class="list-group-item active">
-    Texts
+<div class="col-md-6 offset-md-3">
+  <h1 class="text-xs-center m-t-3">My foreign texts</h1>
+  <div class="list-group m-t-2 m-b-1">
+    <div class="list-group-item active">
+      Texts
+    </div>
+  <% @texts.each do |text| %>
+        <%= link_to text.title, new_text_word_path(text.id), class: "list-group-item" %>
+  <% end %>
   </div>
-<% @texts.each do |text| %>
-      <%= link_to text.title, new_text_word_path(text.id), class: "list-group-item" %>
-<% end %>
+  <%= link_to "Add Text", new_text_path, class:"btn btn-primary btn-block" %>
 </div>
-<%= link_to "[New Text]", new_text_path %>
